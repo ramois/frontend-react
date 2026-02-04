@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { LoginPage, UserPage } from '../pages/public';
 import { PublicRoute } from './PublicRouter';
 import { PrivateRoute } from './PrivateRouter';
@@ -6,7 +6,7 @@ import { PerfilPage, TaskPage } from '../pages/private';
 
 export const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route element={<PublicRoute />}>
           <Route path="/" element={<Navigate to="/login" />} />
@@ -21,6 +21,6 @@ export const AppRouter = () => {
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
